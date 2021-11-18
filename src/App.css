@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f7fb;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 94%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main__button {
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  background: #183153;
+  font-weight: 400;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.5s ease-in;
+}
+
+.main__button:hover {
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.object__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.object__contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.warning,
+.success {
+  color: #000;
+  font-weight: 500;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.warning {
+  background: #febf019c;
+}
+
+.success {
+  background: #70ed9f;
+}
+
+@media screen and (max-width: 940px) {
+  .container {
+    max-width: 680px;
+  }
+}
