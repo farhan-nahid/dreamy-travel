@@ -10,7 +10,7 @@ const AllPlaces = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/top-places')
+      .get('https://dreamy-travel.herokuapp.com/top-places')
       .then((res) => setPlaces(res.data))
       .catch((err) => toast.error(err.message));
   }, []);

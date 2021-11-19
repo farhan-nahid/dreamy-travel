@@ -20,7 +20,7 @@ const AddPlace = () => {
     const product = data;
     product.image = image;
     axios
-      .post('http://localhost:5000/add-place', product)
+      .post('https://dreamy-travel.herokuapp.com/add-place', product)
       .then((res) => {
         if (res.status === 200) {
           Swal.fire({

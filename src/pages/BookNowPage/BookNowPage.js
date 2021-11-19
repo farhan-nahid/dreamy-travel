@@ -15,7 +15,7 @@ const BookNowPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/place/${id}`)
+      .get(`https://dreamy-travel.herokuapp.com/place/${id}`)
       .then((res) => setSelectedPlace(res.data))
       .catch((err) => toast.err(err.message));
   }, [id]);
@@ -47,18 +47,20 @@ const BookNowPage = () => {
     order.ticketQuantity = ticketCount;
     order.orderTime = `${day}-${monthName}-${year}`;
     console.log(order);
-    axios.post('http://localhost:5000/order', order).then((res) => {
-      if (res.status === 200) {
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: `You Order ${ticketCount} ticket of ${selectedPlace.name}`,
-          showConfirmButton: false,
-          timer: 2500,
-        });
-        setTicketCount(1);
-      }
-    });
+    axios
+      .post('https://dreamy-travel.herokuapp.com/order', order)
+      .then((res) => {
+        if (res.status === 200) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `You Order ${ticketCount} ticket of ${selectedPlace.name}`,
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          setTicketCount(1);
+        }
+      });
   };
 
   return (
