@@ -64,6 +64,7 @@ body {
 
 .warning {
   background: #febf019c;
+  /* background-color: rgba(254,191,1,.611764705882353); */
 }
 
 .success {

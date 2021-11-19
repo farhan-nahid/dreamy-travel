@@ -15,42 +15,48 @@ import './DashBoard.css';
 
 const DashBoard = () => {
   const match = useRouteMatch();
-  const activePath = useHistory().location.pathname.split('/')[2] || 'manage';
+  const location = useHistory().location;
+  const activePath = location.pathname.split('/')[2] || 'manage-orders';
   const [active, setActive] = useState(activePath);
 
   useEffect(() => {
     setActive(activePath);
   }, [activePath]);
-  console.log(match);
 
   return (
-    <section className='admin'>
+    <section className='dashboard'>
       <div className='sidebar'>
         <Link className='sidebar__logo' to='/'>
           Dreamy Travel
         </Link>
         <nav className='sidebar__nav'>
           <Link
-            className={`sidebar__link ${active === 'manage' ? 'active' : ''}`}
-            to={`${match.path}/manage`}
+            className={`sidebar__link ${
+              active === 'manage-orders' ? 'active' : ''
+            }`}
+            to={`${match.path}/manage-orders`}
           >
             <span>
-              <img src={Grid} alt='Grid' /> Manage Product
+              <img src={Grid} alt='Grid' /> Manage Orders
             </span>
           </Link>
 
           <Link
-            className={`sidebar__link ${active === 'add' ? 'active' : ''}`}
-            to={`${match.path}/add`}
+            className={`sidebar__link ${
+              active === 'add-place' ? 'active' : ''
+            }`}
+            to={`${match.path}/add-place`}
           >
             <span>
-              <img src={Plus} alt='Grid' /> Add Product
+              <img src={Plus} alt='Grid' /> Add Place
             </span>
           </Link>
 
           <Link
-            className={`sidebar__link ${active === 'edit' ? 'active' : ''}`}
-            to={`${match.path}/edit`}
+            className={`sidebar__link ${
+              active === 'edit-place' ? 'active' : ''
+            }`}
+            to={`${match.path}/edit-place`}
           >
             <span>
               <img src={Edit} alt='Grid' /> Edit Product
@@ -58,18 +64,20 @@ const DashBoard = () => {
           </Link>
         </nav>
       </div>
-      <div className='admin__content'>
+      <div className='dashboard__content'>
         <Switch>
           <Route exact path={`${match.path}/`}>
             <ManageOrders />
           </Route>
-          <Route path={`${match.path}/manage`}>
+          <Route path={`${match.path}/manage-orders`}>
             <ManageOrders />
           </Route>
-          <Route path={`${match.path}/add`}>
+          <Route path={`${match.path}/add-place`}>
             <AddPlace />
           </Route>
-          <Route path={`${match.path}/edit`}>{/* <ProductEdit /> */}</Route>
+          <Route path={`${match.path}/edit-place`}>
+            {/* <ProductEdit /> */}
+          </Route>
         </Switch>
       </div>
     </section>

@@ -1,4 +1,4 @@
-.admin {
+.dashboard {
   display: flex;
   justify-content: space-between;
   min-height: 100vh;
@@ -9,7 +9,7 @@
   width: 310px;
 }
 
-.admin__content {
+.dashboard__content {
   width: calc(100vw - 310px);
 }
 
@@ -31,6 +31,11 @@
   padding: 12px;
 }
 
+.sidebar__logo:hover,
+.sidebar__link:hover {
+  color: #fff;
+}
+
 .sidebar__link.active {
   background: #1d3c66;
 }
@@ -47,7 +52,7 @@
   margin: 0 auto;
 }
 
-.admin__header {
+.dashboard__header {
   padding: 20px 30px;
   background: #fff;
 }
@@ -56,19 +61,19 @@
   .sidebar {
     width: 260px;
   }
-  .admin__content {
+  .dashboard__content {
     width: calc(100vw - 260px);
   }
 }
 
 @media screen and (max-width: 880px) {
-  .admin__header {
+  .dashboard__header {
     padding: 20px;
   }
 }
 
 @media screen and (max-width: 770px) {
-  .admin {
+  .dashboard {
     flex-wrap: wrap;
     min-height: initial;
   }
@@ -96,7 +101,7 @@
     font-size: 15px;
     padding: 10px 0;
   }
-  .admin__header {
+  .dashboard__header {
     padding: 15px 10px;
     font-size: 20px;
   }

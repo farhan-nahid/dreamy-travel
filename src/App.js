@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import PreLoader from './pages/SharedComponents/PreLoader/PreLoader';
@@ -11,15 +12,18 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 function App() {
   return (
-    <Suspense fallback={<PreLoader />}>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/home' component={Home} />
-        <Route path='/login' component={Login} />
-        <Route path='/dashboard' component={DashBoard} />
-        <Route path='*' component={NotFoundPage} />
-      </Switch>
-    </Suspense>
+    <>
+      <Toaster />
+      <Suspense fallback={<PreLoader />}>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/home' component={Home} />
+          <Route path='/login' component={Login} />
+          <Route path='/dashboard' component={DashBoard} />
+          <Route path='*' component={NotFoundPage} />
+        </Switch>
+      </Suspense>
+    </>
   );
 }
 
