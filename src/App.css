@@ -41,18 +41,6 @@ body {
   letter-spacing: 1px;
 }
 
-.object__cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.object__contain {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .warning,
 .success {
   color: #000;

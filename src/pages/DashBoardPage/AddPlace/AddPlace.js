@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
 import './AddPlace.css';
 
 const AddPlace = () => {
@@ -18,7 +19,21 @@ const AddPlace = () => {
     if (!image) return;
     const product = data;
     product.image = image;
-    console.log(product);
+    axios
+      .post('http://localhost:5000/add-place', product)
+      .then((res) => {
+        if (res.status === 200) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Place added in our database',
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          reset();
+        }
+      })
+      .catch((err) => toast.error(err.message));
   };
 
   const handleImageUpload = (e) => {
@@ -26,6 +41,7 @@ const AddPlace = () => {
     imageData.set('key', '1c7b42d86523b93639ae849aae708b2e');
     imageData.append('image', e.target.files[0]);
     const loading = toast.loading('Uploading...Please wait!');
+
     axios
       .post('https://api.imgbb.com/1/upload', imageData)
       .then((res) => {
@@ -35,7 +51,10 @@ const AddPlace = () => {
           setImage(res.data.data.display_url);
         }
       })
-      .catch((error) => toast.error(error.message));
+      .catch((error) => {
+        toast.dismiss(loading);
+        toast.error(error.message);
+      });
   };
 
   return (

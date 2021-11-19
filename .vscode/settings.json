@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["browserslist", "fontawesome", "fortawesome", "sweetalert"]
+  "cSpell.words": [
+    "browserslist",
+    "fontawesome",
+    "fortawesome",
+    "Swal",
+    "sweetalert"
+  ]
 }

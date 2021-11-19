@@ -1,0 +1,44 @@
+.places__section {
+  margin: 70px auto;
+  color: #183153;
+}
+
+.places__section h3 {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.places__section h3::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #183153;
+  width: 70px;
+}
+
+.places__section p {
+  text-align: center;
+}
+
+.place__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .place__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .place__container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,48 @@
+.selected__place {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  background-color: #fff;
+  margin: 70px auto;
+}
+
+.total__ticket {
+  width: 150px;
+  text-align: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 600;
+  display: inline-block;
+  padding: 7px 0;
+  font-size: 20px;
+  background-color: #f2f7fb;
+}
+
+.book__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.plus__button,
+.minus__button {
+  cursor: pointer;
+  color: #183153;
+  background-color: #f2f7fb;
+  padding: 7px;
+  font-size: 20px;
+  display: inline-block;
+  user-select: none;
+}
+
+.minus__button {
+  margin-right: 10px;
+}
+
+.plus__button {
+  margin-left: 10px;
+}
+
+.book__content button {
+  margin-top: 20px;
+}

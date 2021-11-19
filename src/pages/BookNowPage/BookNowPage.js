@@ -1,0 +1,96 @@
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import { useParams } from 'react-router';
+import Swal from 'sweetalert2';
+import Header from '../HomePage/Header/Header';
+import './BookNowPage.css';
+
+const BookNowPage = () => {
+  const [selectedPlace, setSelectedPlace] = useState({});
+  const [ticketCount, setTicketCount] = useState(1);
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/place/${id}`)
+      .then((res) => setSelectedPlace(res.data))
+      .catch((err) => toast.err(err.message));
+  }, [id]);
+
+  const handleIncrease = () => setTicketCount(ticketCount + 1);
+  const handleDecrease = () =>
+    ticketCount > 1 ? setTicketCount(ticketCount - 1) : ticketCount;
+
+  const placeOrder = () => {
+    const month = [];
+    const date = new Date();
+    const order = {};
+    month[0] = 'January';
+    month[1] = 'February';
+    month[2] = 'March';
+    month[3] = 'April';
+    month[4] = 'May';
+    month[5] = 'June';
+    month[6] = 'July';
+    month[7] = 'August';
+    month[8] = 'September';
+    month[9] = 'October';
+    month[10] = 'November';
+    month[11] = 'December';
+    const year = date.getFullYear();
+    const day = date.getDate();
+    const monthName = month[date.getMonth()];
+    order.place = selectedPlace.name;
+    order.ticketQuantity = ticketCount;
+    order.orderTime = `${day}-${monthName}-${year}`;
+    console.log(order);
+    axios.post('http://localhost:5000/order', order).then((res) => {
+      if (res.status === 200) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `You Order ${ticketCount} ticket of ${selectedPlace.name}`,
+          showConfirmButton: false,
+          timer: 2500,
+        });
+        setTicketCount(1);
+      }
+    });
+  };
+
+  return (
+    <>
+      <Header />
+      <section className='container'>
+        <div className='selected__place'>
+          <img src={selectedPlace.image} alt='' />
+          <div className='book__content'>
+            <span>
+              <h3>{selectedPlace.name}</h3>
+              <p>{selectedPlace.description}.</p>
+              <h3>${selectedPlace.price}</h3>
+              <div>
+                <h5 className='d-inline-block me-3'>Quantity:</h5>
+                <span onClick={handleDecrease} className='minus__button'>
+                  <FontAwesomeIcon icon={faMinus} />
+                </span>
+                <span className='total__ticket'>{ticketCount}</span>
+                <span onClick={handleIncrease} className='plus__button'>
+                  <FontAwesomeIcon icon={faPlus} />
+                </span>
+              </div>
+              <button className='main__button' onClick={placeOrder}>
+                Place Order
+              </button>
+            </span>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default BookNowPage;

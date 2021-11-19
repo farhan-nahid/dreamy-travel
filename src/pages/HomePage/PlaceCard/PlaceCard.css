@@ -1,0 +1,24 @@
+.place__card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.place__card img {
+  width: 100%;
+}
+
+.card__content {
+  padding: 20px;
+}
+
+.card__content h4,
+.card__content p {
+  text-align: center;
+}
+
+.card__price__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
