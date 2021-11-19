@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
+import useAuth from '../../hooks/useAuth';
 import Header from '../HomePage/Header/Header';
 import './BookNowPage.css';
 
@@ -12,6 +13,7 @@ const BookNowPage = () => {
   const [selectedPlace, setSelectedPlace] = useState({});
   const [ticketCount, setTicketCount] = useState(1);
   const id = useHistory().location.pathname.split('/')[2];
+  const { loggedInUser } = useAuth();
 
   useEffect(() => {
     axios
@@ -46,7 +48,7 @@ const BookNowPage = () => {
     order.place = selectedPlace.name;
     order.ticketQuantity = ticketCount;
     order.orderTime = `${day}-${monthName}-${year}`;
-    console.log(order);
+    order.email = loggedInUser.email;
     axios
       .post('https://dreamy-travel.herokuapp.com/order', order)
       .then((res) => {
