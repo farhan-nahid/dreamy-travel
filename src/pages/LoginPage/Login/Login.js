@@ -23,7 +23,7 @@ const Login = () => {
   const redirect_URI = location.state?.from || '/';
 
   useEffect(() => {
-    document.title = 'Login | Bangladesh Dental care';
+    document.title = 'Login | Dreamy Travel';
   }, []);
 
   const handelEmailBlur = (e) => setEmail(e.target.value);

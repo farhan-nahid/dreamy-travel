@@ -21,7 +21,7 @@ const Register = () => {
   const history = useHistory();
 
   useEffect(() => {
-    document.title = 'Register | Bangladesh Dental care';
+    document.title = 'Register | Dreamy Travel';
   }, []);
 
   // set input values

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
 import Header from '../SharedComponents/Header/Header';
@@ -18,6 +18,11 @@ const BookNowPage = () => {
   const { name, description, price, image } = selectedPlace;
   const totalPrice = price * ticketCount;
   const { id } = useParams();
+  const history = useHistory();
+
+  useEffect(() => {
+    document.title = 'Book Now | Dreamy Travel';
+  }, []);
 
   useEffect(() => {
     axios
@@ -70,6 +75,7 @@ const BookNowPage = () => {
             timer: 2500,
           });
           setTicketCount(1);
+          history.push('/dashboard/my-orders');
         }
       });
   };
@@ -89,7 +95,7 @@ const BookNowPage = () => {
                 <p>{description}.</p>
                 <h3>${totalPrice}</h3>
                 <div>
-                  <h5 className='d-inline-block me-3'>Quantity:</h5>
+                  <h5 className='d-inline-block me-3'>Ticket:</h5>
                   <span onClick={handleDecrease} className='minus__button'>
                     <FontAwesomeIcon icon={faMinus} />
                   </span>

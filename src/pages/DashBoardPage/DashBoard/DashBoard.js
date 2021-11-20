@@ -24,6 +24,10 @@ const DashBoard = () => {
   const { loggedInUser } = useAuth();
 
   useEffect(() => {
+    document.title = 'Dashboard | Dreamy Travel';
+  }, []);
+
+  useEffect(() => {
     setActive(activePath);
   }, [activePath]);
 

@@ -24,7 +24,7 @@ const Header = () => {
                 Home
               </NavLink>
               <NavLink className='navbar__link' to='/dashboard/my-orders'>
-                Orders
+                My Orders
               </NavLink>
               <NavLink className='navbar__link' to='/dashboard'>
                 Dashboard

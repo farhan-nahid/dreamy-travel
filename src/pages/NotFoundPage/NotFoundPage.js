@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NotFoundPage.css';
 
 const NotFoundPage = () => {
+  useEffect(() => {
+    document.title = 'Not Found | Dreamy Travel';
+  }, []);
   return (
     <>
       <section className='container notFound_container'>
