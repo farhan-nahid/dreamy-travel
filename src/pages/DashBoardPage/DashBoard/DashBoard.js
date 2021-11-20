@@ -3,6 +3,7 @@ import { Link, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import Edit from '../../../assets/images/icon/edit.png';
 import Grid from '../../../assets/images/icon/grid.png';
 import Plus from '../../../assets/images/icon/plus.png';
+import useAuth from '../../../hooks/useAuth';
 import AddPlace from '../AddPlace/AddPlace';
 import EditPlace from '../EditPlace/EditPlace';
 import ManageOrders from '../ManageOrders/ManageOrders';
@@ -14,6 +15,7 @@ const DashBoard = () => {
   const history = useHistory();
   const activePath = history.location.pathname.split('/')[2] || 'manage-orders';
   const [active, setActive] = useState(activePath);
+  const { loggedInUser } = useAuth();
 
   useEffect(() => {
     setActive(activePath);
@@ -85,7 +87,7 @@ const DashBoard = () => {
             <EditPlace />
           </Route>
           <Route path={`/${location}/my-orders`}>
-            <UserOrder />
+            <UserOrder email={loggedInUser.email} />
           </Route>
         </Switch>
       </div>

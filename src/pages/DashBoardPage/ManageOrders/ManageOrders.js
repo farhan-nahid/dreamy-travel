@@ -47,62 +47,60 @@ const ManageOrders = () => {
   };
 
   return (
-    <div>
-      <div className='order__manage'>
-        <h3>Manage order</h3>
-        <div className='order__manage__orders'>
-          <div className='order__manage__content'>
-            <div className='order__row'>
-              <div className='order__col'>
-                <h2>Order Name</h2>
-              </div>
-              <div className='order__col'>
-                <h2>Email</h2>
-              </div>
-              <div className='order__col'>
-                <h2>Quantity</h2>
-              </div>
-              <div className='order__col'>
-                <h2>Time</h2>
-              </div>
-              <div className='order__col'>
-                <h2>Action</h2>
-              </div>
+    <section className='order__manage'>
+      <h3>Manage order</h3>
+      <div className='order__manage__orders'>
+        <div className='order__manage__content'>
+          <div className='order__row'>
+            <div className='order__col'>
+              <h2>Order Name</h2>
             </div>
-            {allOrder.length ? (
-              <>
-                {allOrder.map((order) => (
-                  <div className='order__row' key={order._id}>
-                    <div className='order__col'>
-                      <h4>{order.place}</h4>
-                    </div>
-                    <div className='order__col'>
-                      <h4 className='text__center'>{order.email}</h4>
-                    </div>
-                    <div className='order__col'>
-                      <h4 className='text__center'>{order.ticketQuantity}</h4>
-                    </div>
-                    <div className='order__col'>
-                      <h4 className='text__center'>{order.orderTime}</h4>
-                    </div>
-                    <div className='order__col align__items'>
-                      <span
-                        className='orderAction__btn'
-                        onClick={() => handleDeleteOrder(order._id)}
-                      >
-                        <img src={deleteIcon} alt='deleteIcon' />
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </>
-            ) : (
-              <LoadingSpinner />
-            )}
+            <div className='order__col'>
+              <h2>Email</h2>
+            </div>
+            <div className='order__col'>
+              <h2>Quantity</h2>
+            </div>
+            <div className='order__col'>
+              <h2>Time</h2>
+            </div>
+            <div className='order__col'>
+              <h2>Action</h2>
+            </div>
           </div>
+          {allOrder.length ? (
+            <>
+              {allOrder.map((order) => (
+                <div className='order__row' key={order._id}>
+                  <div className='order__col'>
+                    <h4>{order.place}</h4>
+                  </div>
+                  <div className='order__col'>
+                    <h4 className='text__center'>{order.email}</h4>
+                  </div>
+                  <div className='order__col'>
+                    <h4 className='text__center'>{order.ticketQuantity}</h4>
+                  </div>
+                  <div className='order__col'>
+                    <h4 className='text__center'>{order.orderTime}</h4>
+                  </div>
+                  <div className='order__col align__items'>
+                    <span
+                      className='orderAction__btn'
+                      onClick={() => handleDeleteOrder(order._id)}
+                    >
+                      <img src={deleteIcon} alt='deleteIcon' />
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </>
+          ) : (
+            <LoadingSpinner />
+          )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

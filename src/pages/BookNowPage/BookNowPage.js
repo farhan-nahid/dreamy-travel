@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
-import Header from '../HomePage/Header/Header';
+import Header from '../SharedComponents/Header/Header';
 import './BookNowPage.css';
 
 const BookNowPage = () => {
@@ -27,25 +27,27 @@ const BookNowPage = () => {
     ticketCount > 1 ? setTicketCount(ticketCount - 1) : ticketCount;
 
   const placeOrder = () => {
-    const month = [];
+    const month = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
     const date = new Date();
     const order = {};
-    month[0] = 'January';
-    month[1] = 'February';
-    month[2] = 'March';
-    month[3] = 'April';
-    month[4] = 'May';
-    month[5] = 'June';
-    month[6] = 'July';
-    month[7] = 'August';
-    month[8] = 'September';
-    month[9] = 'October';
-    month[10] = 'November';
-    month[11] = 'December';
     const year = date.getFullYear();
     const day = date.getDate();
     const monthName = month[date.getMonth()];
     order.place = selectedPlace.name;
+    order.image = selectedPlace.image;
     order.ticketQuantity = ticketCount;
     order.orderTime = `${day}-${monthName}-${year}`;
     order.email = loggedInUser.email;

@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
 import useAuth from '../../../hooks/useAuth';
-import Header from '../../HomePage/Header/Header';
+import Header from '../../SharedComponents/Header/Header';
 import './Login.css';
 
 const Login = () => {
