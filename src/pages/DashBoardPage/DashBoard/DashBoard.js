@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Link,
-  Route,
-  Switch,
-  useHistory,
-  useRouteMatch,
-} from 'react-router-dom';
+import { Link, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import Edit from '../../../assets/images/icon/edit.png';
 import Grid from '../../../assets/images/icon/grid.png';
 import Plus from '../../../assets/images/icon/plus.png';
@@ -14,9 +8,9 @@ import ManageOrders from '../ManageOrders/ManageOrders';
 import './DashBoard.css';
 
 const DashBoard = () => {
-  const match = useRouteMatch();
-  const location = useHistory().location;
-  const activePath = location.pathname.split('/')[2] || 'manage-orders';
+  const location = useLocation().pathname.split('/')[1];
+  const history = useHistory();
+  const activePath = history.location.pathname.split('/')[2] || 'manage-orders';
   const [active, setActive] = useState(activePath);
 
   useEffect(() => {
@@ -34,7 +28,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'manage-orders' ? 'active' : ''
             }`}
-            to={`${match.path}/manage-orders`}
+            to={`/${location}/manage-orders`}
           >
             <span>
               <img src={Grid} alt='Grid' /> Manage Orders
@@ -45,7 +39,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'add-place' ? 'active' : ''
             }`}
-            to={`${match.path}/add-place`}
+            to={`/${location}/add-place`}
           >
             <span>
               <img src={Plus} alt='Grid' /> Add Place
@@ -56,7 +50,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'edit-place' ? 'active' : ''
             }`}
-            to={`${match.path}/edit-place`}
+            to={`/${location}/edit-place`}
           >
             <span>
               <img src={Edit} alt='Grid' /> Edit Product
@@ -66,16 +60,16 @@ const DashBoard = () => {
       </div>
       <div className='dashboard__content'>
         <Switch>
-          <Route exact path={`${match.path}/`}>
+          <Route exact path={`/${location}/`}>
             <ManageOrders />
           </Route>
-          <Route path={`${match.path}/manage-orders`}>
+          <Route path={`/${location}/manage-orders`}>
             <ManageOrders />
           </Route>
-          <Route path={`${match.path}/add-place`}>
+          <Route path={`/${location}/add-place`}>
             <AddPlace />
           </Route>
-          <Route path={`${match.path}/edit-place`}>
+          <Route path={`/${location}/edit-place`}>
             {/* <ProductEdit /> */}
           </Route>
         </Switch>

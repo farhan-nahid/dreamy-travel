@@ -62,7 +62,7 @@
     width: 260px;
   }
   .dashboard__content {
-    width: calc(100vw - 260px);
+    width: 100vw;
   }
 }
 
