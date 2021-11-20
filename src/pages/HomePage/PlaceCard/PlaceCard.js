@@ -5,7 +5,9 @@ import './PlaceCard.css';
 const PlaceCard = ({ place: { _id, name, price, description, image } }) => {
   return (
     <div className='place__card'>
-      <img src={image} alt='name' />
+      <div className='card__image'>
+        <img src={image} alt='name' />
+      </div>
       <div className='card__content'>
         <h4>{name}</h4>
         <p>{description}</p>

@@ -2,10 +2,27 @@
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 0 20px #808080;
+  transition: all 0.5s ease-in;
 }
 
-.place__card img {
+.place__card:hover {
+  transform: translateY(-10px);
+}
+
+.place__card .card__image {
+  overflow: hidden;
+}
+
+.place__card .card__image img {
   width: 100%;
+  transition: all 0.5s ease-in;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.place__card .card__image img:hover {
+  transform: scale(1.2) rotate(3deg);
 }
 
 .card__content {
