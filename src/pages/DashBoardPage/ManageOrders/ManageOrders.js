@@ -1,10 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import deleteIcon from '../../../assets/images/icon/delete.png';
-import editIcon from '../../../assets/images/icon/edit2.png';
 import LoadingSpinner from '../../SharedComponents/LoadingSpinner/LoadingSpinner';
 import './ManageOrder.css';
 
@@ -88,12 +86,6 @@ const ManageOrders = () => {
                       <h4 className='text__center'>{order.orderTime}</h4>
                     </div>
                     <div className='order__col align__items'>
-                      <Link
-                        to='/dashboard/edit-place'
-                        className='orderAction__btn'
-                      >
-                        <img src={editIcon} alt='editIcon' />
-                      </Link>
                       <span
                         className='orderAction__btn'
                         onClick={() => handleDeleteOrder(order._id)}
