@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useHistory } from 'react-router';
+import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
 import Header from '../SharedComponents/Header/Header';
@@ -13,11 +13,11 @@ import './BookNowPage.css';
 const BookNowPage = () => {
   const [selectedPlace, setSelectedPlace] = useState({});
   const [ticketCount, setTicketCount] = useState(1);
-  const id = useHistory().location.pathname.split('/')[2];
   const { loggedInUser } = useAuth();
   const addressRef = useRef();
   const { name, description, price, image } = selectedPlace;
   const totalPrice = price * ticketCount;
+  const { id } = useParams();
 
   useEffect(() => {
     axios

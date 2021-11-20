@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import PreLoader from '../../SharedComponents/PreLoader/PreLoader';
 
-const PrivateRoute = ({ children, rest }) => {
+const PrivateRoute = ({ children, ...rest }) => {
   const { loggedInUser, isLoading } = useAuth();
 
   if (isLoading) return <PreLoader />;

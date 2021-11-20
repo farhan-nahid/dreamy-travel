@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import {
+  Link,
+  Route,
+  Switch,
+  useHistory,
+  useRouteMatch,
+} from 'react-router-dom';
 import Edit from '../../../assets/images/icon/edit.png';
 import Grid from '../../../assets/images/icon/grid.png';
 import Plus from '../../../assets/images/icon/plus.png';
@@ -11,7 +17,7 @@ import UserOrder from '../UserOrder/UserOrder';
 import './DashBoard.css';
 
 const DashBoard = () => {
-  const location = useLocation().pathname.split('/')[1];
+  const match = useRouteMatch();
   const history = useHistory();
   const activePath = history.location.pathname.split('/')[2] || 'manage-orders';
   const [active, setActive] = useState(activePath);
@@ -32,7 +38,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'manage-orders' ? 'active' : ''
             }`}
-            to={`/${location}/manage-orders`}
+            to={`${match.path}/manage-orders`}
           >
             <span>
               <img src={Grid} alt='Grid' /> Manage Orders
@@ -43,7 +49,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'add-place' ? 'active' : ''
             }`}
-            to={`/${location}/add-place`}
+            to={`${match.path}/add-place`}
           >
             <span>
               <img src={Plus} alt='Grid' /> Add Place
@@ -54,7 +60,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'edit-place' ? 'active' : ''
             }`}
-            to={`/${location}/edit-place`}
+            to={`${match.path}/edit-place`}
           >
             <span>
               <img src={Edit} alt='Grid' /> Edit Product
@@ -64,7 +70,7 @@ const DashBoard = () => {
             className={`sidebar__link ${
               active === 'my-orders' ? 'active' : ''
             }`}
-            to={`/${location}/my-orders`}
+            to={`${match.path}/my-orders`}
           >
             <span>
               <img src={Grid} alt='Grid' /> My Orders
@@ -74,19 +80,19 @@ const DashBoard = () => {
       </div>
       <div className='dashboard__content'>
         <Switch>
-          <Route exact path={`/${location}/`}>
+          <Route exact path={`${match.path}/`}>
             <ManageOrders />
           </Route>
-          <Route path={`/${location}/manage-orders`}>
+          <Route path={`${match.path}/manage-orders`}>
             <ManageOrders />
           </Route>
-          <Route path={`/${location}/add-place`}>
+          <Route path={`${match.path}/add-place`}>
             <AddPlace />
           </Route>
-          <Route path={`/${location}/edit-place`}>
+          <Route path={`${match.path}/edit-place`}>
             <EditPlace />
           </Route>
-          <Route path={`/${location}/my-orders`}>
+          <Route path={`${match.path}/my-orders`}>
             <UserOrder email={loggedInUser.email} />
           </Route>
         </Switch>
