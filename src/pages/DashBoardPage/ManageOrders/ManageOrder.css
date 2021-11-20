@@ -1,4 +1,4 @@
-.productManage__products {
+.order__manage__orders {
   margin: 30px;
   background: #fff;
   border-radius: 15px;
@@ -6,24 +6,31 @@
   overflow-x: auto;
 }
 
-.productManage__products::-webkit-scrollbar {
+.order__manage h3 {
+  padding: 20px;
+  background-color: #fff;
+  color: #183153;
+  font-weight: 800;
+}
+
+.order__manage__orders::-webkit-scrollbar {
   height: 5px;
 }
 
-.productManage__products::-webkit-scrollbar-track {
+.order__manage__orders::-webkit-scrollbar-track {
   background: #18315333;
 }
 
-.productManage__products::-webkit-scrollbar-thumb {
+.order__manage__orders::-webkit-scrollbar-thumb {
   background: #183153;
 }
 
-.productManage__content {
+.order__manage__content {
   min-width: 700px;
   padding: 20px;
 }
 
-.productManage .product__row {
+.order__manage .order__row {
   display: grid;
   grid-template-columns: 180px 200px 50px 180px 100px;
   width: 100%;
@@ -33,29 +40,29 @@
   padding: 0 20px;
 }
 
-.productManage .product__row:first-child {
+.order__manage .order__row:first-child {
   background: #f2f7fb;
   border-radius: 10px;
   padding: 15px 20px;
   margin-top: 0;
 }
 
-.productManage .product__col:first-child {
+.order__manage .order__col:first-child {
   min-width: 220px;
 }
 
-.productManage .product__col h2 {
+.order__manage .order__col h2 {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
 
-.productManage .product__col h3 {
+.order__manage .order__col h4 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-.productManage .pdAction__btn {
+.order__manage .orderAction__btn {
   width: 30px;
   height: 30px;
   border-radius: 5px;
@@ -66,7 +73,7 @@
   cursor: pointer;
 }
 
-.productManage .pdAction__btn:first-child {
+.order__manage .orderAction__btn:first-child {
   margin-right: 10px;
 }
 
@@ -75,7 +82,7 @@
   text-align: center;
 }
 
-.pdAction__btn img {
+.orderAction__btn img {
   width: 100%;
   object-fit: cover;
   height: 100%;
@@ -88,32 +95,32 @@
 }
 
 @media screen and (max-width: 880px) {
-  .productManage__products {
+  .order__manage__orders {
     margin: 20px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .productManage__products {
+  .order__manage__orders {
     margin: 10px;
   }
-  .productManage__content {
+  .order__manage__content {
     min-width: 600px;
     padding: 10px;
   }
-  .productManage .product__row {
+  .order__manage .order__row {
     grid-template-columns: 180px 200px 50px 180px 100px;
     padding: 0 15;
   }
-  .productManage .product__row:first-child {
+  .order__manage .order__row:first-child {
     border-radius: 8px;
     padding: 15px;
   }
-  .productManage .product__col:first-child {
+  .order__manage .order__col:first-child {
     min-width: 180px;
   }
-  .productManage .product__col h2,
-  .productManage .product__col h3 {
+  .order__manage .order__col h2,
+  .order__manage .order__col h3 {
     font-size: 15px;
   }
 }

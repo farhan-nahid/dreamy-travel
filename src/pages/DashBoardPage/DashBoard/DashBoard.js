@@ -4,7 +4,9 @@ import Edit from '../../../assets/images/icon/edit.png';
 import Grid from '../../../assets/images/icon/grid.png';
 import Plus from '../../../assets/images/icon/plus.png';
 import AddPlace from '../AddPlace/AddPlace';
+import EditPlace from '../EditPlace/EditPlace';
 import ManageOrders from '../ManageOrders/ManageOrders';
+import UserOrder from '../UserOrder/UserOrder';
 import './DashBoard.css';
 
 const DashBoard = () => {
@@ -56,6 +58,16 @@ const DashBoard = () => {
               <img src={Edit} alt='Grid' /> Edit Product
             </span>
           </Link>
+          <Link
+            className={`sidebar__link ${
+              active === 'my-orders' ? 'active' : ''
+            }`}
+            to={`/${location}/my-orders`}
+          >
+            <span>
+              <img src={Grid} alt='Grid' /> My Orders
+            </span>
+          </Link>
         </nav>
       </div>
       <div className='dashboard__content'>
@@ -70,7 +82,10 @@ const DashBoard = () => {
             <AddPlace />
           </Route>
           <Route path={`/${location}/edit-place`}>
-            {/* <ProductEdit /> */}
+            <EditPlace />
+          </Route>
+          <Route path={`/${location}/my-orders`}>
+            <UserOrder />
           </Route>
         </Switch>
       </div>
