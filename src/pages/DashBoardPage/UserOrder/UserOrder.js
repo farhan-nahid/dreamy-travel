@@ -55,9 +55,15 @@ const UserOrder = ({ email }) => {
               <div className='order__img--box'>
                 <img src={order.image} alt={order.place} />
               </div>
-              <h2>{order.email}</h2>
+              <h2>{order.place}</h2>
               <h2>QT {order.ticketQuantity}</h2>
-              <h2>{order.orderTime}</h2>
+              <h2
+                className={`${
+                  order.status === 'Pending' ? 'pending' : 'approved'
+                }`}
+              >
+                {order.status}
+              </h2>
               <span
                 className='order__delete'
                 onClick={() => handleDeleteOrder(order._id)}

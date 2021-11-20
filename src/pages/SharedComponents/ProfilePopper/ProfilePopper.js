@@ -10,7 +10,6 @@ const ProfilePopper = () => {
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
   const { loggedInUser, logOut } = useAuth();
-  console.log(loggedInUser);
 
   const handleClick = (event) => {
     setShow(!show);

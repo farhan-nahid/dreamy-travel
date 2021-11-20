@@ -32,12 +32,17 @@
 
 .order__manage .order__row {
   display: grid;
-  grid-template-columns: 180px 200px 50px 180px 100px;
+  grid-template-columns: 110px 170px 50px 160px 50px 90px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
   padding: 0 20px;
+}
+
+.order__manage option {
+  border: 0;
+  outline: 0;
 }
 
 .order__manage .order__row:first-child {

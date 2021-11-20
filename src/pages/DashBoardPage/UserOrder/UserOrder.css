@@ -47,6 +47,18 @@
   width: 30px;
 }
 
+.pending {
+  background-color: #febf0157;
+  padding: 7px;
+  color: #000;
+}
+
+.approved {
+  background-color: #70eda085;
+  color: #000;
+  padding: 7px;
+}
+
 @media screen and (max-width: 490px) {
   .order__card {
     padding: 10px;

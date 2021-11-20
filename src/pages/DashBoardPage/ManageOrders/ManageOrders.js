@@ -46,6 +46,32 @@ const ManageOrders = () => {
     });
   };
 
+  const handleStatusChange = (id, status) => {
+    const modifiedOrders = [];
+    allOrder.forEach((order) => {
+      if (order._id === id) {
+        order.status = status;
+      }
+      modifiedOrders.push(order);
+    });
+    setAllOrder(modifiedOrders);
+
+    const modifiedStatus = { id, status };
+    const loading = toast.loading('Updating....Please wait!');
+    axios
+      .put(`https://dreamy-travel.herokuapp.com/order/${id}`, modifiedStatus)
+      .then((res) => {
+        if (res.status === 200) {
+          toast.dismiss(loading);
+          toast.success(`Order is ${modifiedStatus.status}`);
+        }
+      })
+      .catch((err) => {
+        toast.dismiss(loading);
+        toast.error(err.message);
+      });
+  };
+
   return (
     <section className='order__manage'>
       <h3>Manage order</h3>
@@ -66,6 +92,9 @@ const ManageOrders = () => {
             </div>
             <div className='order__col'>
               <h2>Action</h2>
+            </div>
+            <div className='order__col'>
+              <h2>Status</h2>
             </div>
           </div>
           {allOrder.length ? (
@@ -91,6 +120,22 @@ const ManageOrders = () => {
                     >
                       <img src={deleteIcon} alt='deleteIcon' />
                     </span>
+                  </div>
+                  <div className='order__col'>
+                    <select
+                      className={
+                        order.status === 'Pending'
+                          ? 'btn btn-warning'
+                          : 'btn btn-success'
+                      }
+                      defaultValue={order.status}
+                      onChange={(e) =>
+                        handleStatusChange(order._id, e.target.value)
+                      }
+                    >
+                      <option className='bg-white text-muted'>Pending</option>
+                      <option className='bg-white text-muted'>Approved</option>
+                    </select>
                   </div>
                 </div>
               ))}
