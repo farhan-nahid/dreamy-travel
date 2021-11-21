@@ -1,3 +1,5 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import {
   Link,
@@ -13,6 +15,7 @@ import useAuth from '../../../hooks/useAuth';
 import AddPlace from '../AddPlace/AddPlace';
 import EditPlace from '../EditPlace/EditPlace';
 import ManageOrders from '../ManageOrders/ManageOrders';
+import ManagePlace from '../ManagePlace/ManagePlace';
 import UserOrder from '../UserOrder/UserOrder';
 import './DashBoard.css';
 
@@ -62,16 +65,6 @@ const DashBoard = () => {
 
           <Link
             className={`sidebar__link ${
-              active === 'edit-place' ? 'active' : ''
-            }`}
-            to={`${match.path}/edit-place`}
-          >
-            <span>
-              <img src={Edit} alt='Grid' /> Edit Product
-            </span>
-          </Link>
-          <Link
-            className={`sidebar__link ${
               active === 'my-orders' ? 'active' : ''
             }`}
             to={`${match.path}/my-orders`}
@@ -79,6 +72,36 @@ const DashBoard = () => {
             <span>
               <img src={Grid} alt='Grid' /> My Orders
             </span>
+          </Link>
+
+          <Link
+            className={`sidebar__link ${
+              active === 'edit-place' ? 'active' : ''
+            }`}
+            to={`${match.path}/edit-place`}
+          >
+            <span>
+              <img src={Edit} alt='Grid' /> Edit Place
+            </span>
+          </Link>
+
+          <Link
+            className={`sidebar__link ${
+              active === 'all-place' ? 'active' : ''
+            }`}
+            to={`${match.path}/all-place`}
+          >
+            <span>
+              <img src={Grid} alt='Grid' /> All Place
+            </span>
+          </Link>
+
+          <Link to='/' className='sidebar__link '>
+            <p className='home__button'>
+              {' '}
+              <FontAwesomeIcon icon={faArrowLeft} />
+              Back Home
+            </p>
           </Link>
         </nav>
       </div>
@@ -98,6 +121,9 @@ const DashBoard = () => {
           </Route>
           <Route path={`${match.path}/my-orders`}>
             <UserOrder email={loggedInUser.email} />
+          </Route>
+          <Route path={`${match.path}/all-place`}>
+            <ManagePlace />
           </Route>
         </Switch>
       </div>

@@ -38,3 +38,21 @@
 .single__counter:hover {
   box-shadow: 0 0 20px lightgrey;
 }
+
+@media only screen and (max-width: 1100px) {
+  .counter__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .counter__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .counter__container {
+    grid-template-columns: 1fr;
+  }
+}

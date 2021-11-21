@@ -74,7 +74,7 @@ const ManageOrders = () => {
 
   return (
     <section className='order__manage'>
-      <h3>Manage order</h3>
+      <h3>Manage Order</h3>
       <div className='order__manage__orders'>
         <div className='order__manage__content'>
           <div className='order__row'>

@@ -1,0 +1,126 @@
+.place__manage__places {
+  margin: 30px;
+  background: #fff;
+  border-radius: 15px;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.place__manage h3 {
+  padding: 20px;
+  background-color: #fff;
+  color: #183153;
+  font-weight: 800;
+}
+
+.place__manage__places::-webkit-scrollbar {
+  height: 5px;
+}
+
+.place__manage__places::-webkit-scrollbar-track {
+  background: #18315333;
+}
+
+.place__manage__places::-webkit-scrollbar-thumb {
+  background: #183153;
+}
+
+.place__manage__content {
+  min-width: 700px;
+  padding: 20px;
+}
+
+.place__manage .place__row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 0.5fr;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.place__manage option {
+  border: 0;
+  outline: 0;
+}
+
+.place__manage .place__row:first-child {
+  background: #f2f7fb;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 0;
+}
+
+.place__manage .place__col:first-child {
+  min-width: 220px;
+}
+
+.place__manage .place__col h2 {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.place__manage .place__col h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.place__manage .placeAction__btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.text__center {
+  justify-content: center;
+  text-align: center;
+}
+
+.placeAction__btn img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.align__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 880px) {
+  .place__manage__places {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .place__manage__places {
+    margin: 10px;
+  }
+  .place__manage__content {
+    min-width: 600px;
+    padding: 10px;
+  }
+  .place__manage .place__row {
+    padding: 0 15;
+  }
+  .place__manage .place__row:first-child {
+    border-radius: 8px;
+    padding: 15px;
+  }
+  .place__manage .place__col:first-child {
+    min-width: 180px;
+  }
+  .place__manage .place__col h2,
+  .place__manage .place__col h3 {
+    font-size: 15px;
+  }
+}
