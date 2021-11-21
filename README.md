@@ -10,6 +10,7 @@
 - In `manage-orders` route we can see all orders
 - Only Authenticate user can order, add or see all orders.
 - For login you can use `email-password`, `gmail`, `gitHub`.
+- Dynamic Title name.
 
 ---
 
