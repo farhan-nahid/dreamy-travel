@@ -1,4 +1,4 @@
-### [Dreamy Travel](https://dreamy-travel.firebaseapp.com/)
+### [Dreamy Travel](https://dreamy-travel.web.app/)
 
 ### `Some Description`
 
@@ -16,7 +16,7 @@
 
 ### `Live Site`
 
-https://dreamy-travel.firebaseapp.com/
+https://dreamy-travel.web.app/
 
 ---
 
