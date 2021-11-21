@@ -5,6 +5,7 @@ import './App.css';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './pages/LoginPage/PrivateRoute/PrivateRoute';
 import PreLoader from './pages/SharedComponents/PreLoader/PreLoader';
+import ScrollToTop from './pages/SharedComponents/ScrollToTop/ScrollToTop';
 const DashBoard = lazy(() =>
   import('./pages/DashBoardPage/DashBoard/DashBoard')
 );
@@ -17,6 +18,7 @@ const BookNowPage = lazy(() => import('./pages/BookNowPage/BookNowPage'));
 function App() {
   return (
     <AuthProvider>
+      <ScrollToTop />
       <Toaster />
       <Suspense fallback={<PreLoader />}>
         <Switch>
