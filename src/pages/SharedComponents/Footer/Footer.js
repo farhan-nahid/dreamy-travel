@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className='container'>
       <div className='footer__container'>
         <div>
-          <h3>About</h3>
+          <h3>ABOUT</h3>
           <p>
             We are Dreamy Travel. We are offering some amazing offer for you.
           </p>
