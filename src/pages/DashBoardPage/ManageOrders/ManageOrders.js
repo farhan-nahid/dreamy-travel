@@ -107,10 +107,10 @@ const ManageOrders = () => {
                   <div className='order__col'>
                     <h4 className='text__center'>{order.email}</h4>
                   </div>
-                  <div className='order__col'>
+                  <div className='order__col align__items'>
                     <h4 className='text__center'>{order.ticketQuantity}</h4>
                   </div>
-                  <div className='order__col'>
+                  <div className='order__col align__items'>
                     <h4 className='text__center'>{order.orderTime}</h4>
                   </div>
                   <div className='order__col align__items'>

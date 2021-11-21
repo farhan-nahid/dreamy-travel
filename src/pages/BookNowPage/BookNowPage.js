@@ -16,6 +16,8 @@ const BookNowPage = () => {
   const [ticketCount, setTicketCount] = useState(1);
   const { loggedInUser } = useAuth();
   const addressRef = useRef();
+  const nameRef = useRef();
+  const emailRef = useRef();
   const { name, description, price, image } = selectedPlace;
   const totalPrice = price * ticketCount;
   const { id } = useParams();
@@ -61,7 +63,8 @@ const BookNowPage = () => {
     order.ticketQuantity = ticketCount;
     order.price = totalPrice;
     order.orderTime = `${day}-${monthName}-${year}`;
-    order.email = loggedInUser.email;
+    order.name = nameRef.current.value;
+    order.email = emailRef.current.value;
     order.address = addressRef.current.value;
     order.status = 'Pending';
     axios
@@ -103,6 +106,20 @@ const BookNowPage = () => {
                 <span onClick={handleIncrease} className='plus__button'>
                   <FontAwesomeIcon icon={faPlus} />
                 </span>
+                <input
+                  type='text'
+                  placeholder='Your Name'
+                  ref={nameRef}
+                  className='form-control'
+                  defaultValue={loggedInUser.displayName}
+                />
+                <input
+                  type='email'
+                  placeholder='Your Email'
+                  ref={emailRef}
+                  className='form-control'
+                  defaultValue={loggedInUser.email}
+                />
                 <input
                   type='text'
                   placeholder='Your Address (Optional)'

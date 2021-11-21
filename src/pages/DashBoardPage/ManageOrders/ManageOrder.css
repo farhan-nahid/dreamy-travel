@@ -78,10 +78,6 @@
   cursor: pointer;
 }
 
-.order__manage .orderAction__btn:first-child {
-  margin-right: 10px;
-}
-
 .text__center {
   justify-content: center;
   text-align: center;

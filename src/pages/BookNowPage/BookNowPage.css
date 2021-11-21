@@ -8,7 +8,9 @@
 }
 
 .selected__place img {
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .selected__place input {
@@ -33,6 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 20px;
 }
 
 .plus__button,
@@ -65,9 +68,5 @@
 
   .selected__place input {
     width: 80%;
-  }
-
-  .book__content {
-    padding: 0 20px 20px 20px;
   }
 }
