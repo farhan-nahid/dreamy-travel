@@ -4,6 +4,17 @@
   gap: 30px;
   background-color: #fff;
   margin: 70px auto;
+  padding: 0;
+}
+
+.selected__place img {
+  width: 100%;
+}
+
+.selected__place input {
+  width: 50%;
+  margin-top: 20px;
+  display: block;
 }
 
 .total__ticket {
@@ -45,4 +56,18 @@
 
 .book__content button {
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .selected__place {
+    grid-template-columns: 1fr;
+  }
+
+  .selected__place input {
+    width: 80%;
+  }
+
+  .book__content {
+    padding: 0 20px 20px 20px;
+  }
 }

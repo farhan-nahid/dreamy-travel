@@ -86,37 +86,35 @@ const BookNowPage = () => {
       {!name ? (
         <LoadingSpinner />
       ) : (
-        <section className='container'>
-          <div className='selected__place'>
-            <img src={image} alt='' />
-            <div className='book__content'>
-              <span>
-                <h3>{name}</h3>
-                <p>{description}.</p>
-                <h3>${totalPrice}</h3>
-                <div>
-                  <h5 className='d-inline-block me-3'>Ticket:</h5>
-                  <span onClick={handleDecrease} className='minus__button'>
-                    <FontAwesomeIcon icon={faMinus} />
-                  </span>
-                  <span className='total__ticket'>{ticketCount}</span>
-                  <span onClick={handleIncrease} className='plus__button'>
-                    <FontAwesomeIcon icon={faPlus} />
-                  </span>
-                  <input
-                    type='text'
-                    placeholder='Your Address (Optional)'
-                    ref={addressRef}
-                    className='w-50 d-block mt-3 form-control'
-                  />
-                </div>
-                <button className='main__button' onClick={placeOrder}>
-                  Place Order
-                </button>
-              </span>
-            </div>
+        <div className='selected__place container'>
+          <img src={image} alt={name} />
+          <div className='book__content'>
+            <span>
+              <h3>{name}</h3>
+              <p>{description}.</p>
+              <h3>${totalPrice}</h3>
+              <div>
+                <h5 className='d-inline-block me-3'>Ticket:</h5>
+                <span onClick={handleDecrease} className='minus__button'>
+                  <FontAwesomeIcon icon={faMinus} />
+                </span>
+                <span className='total__ticket'>{ticketCount}</span>
+                <span onClick={handleIncrease} className='plus__button'>
+                  <FontAwesomeIcon icon={faPlus} />
+                </span>
+                <input
+                  type='text'
+                  placeholder='Your Address (Optional)'
+                  ref={addressRef}
+                  className='form-control'
+                />
+              </div>
+              <button className='main__button' onClick={placeOrder}>
+                Place Order
+              </button>
+            </span>
           </div>
-        </section>
+        </div>
       )}
     </>
   );

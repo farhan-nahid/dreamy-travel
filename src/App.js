@@ -22,10 +22,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/home' component={Home} />
-          {/* <Route path='/book/:id' component={BookNowPage} /> */}
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
-          {/* <Route path='/dashboard' component={DashBoard} /> */}
           <PrivateRoute path='/dashboard'>
             <DashBoard />
           </PrivateRoute>

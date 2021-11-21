@@ -114,7 +114,7 @@
     padding: 10px;
   }
   .order__manage .order__row {
-    grid-template-columns: 180px 200px 50px 180px 100px;
+    /* grid-template-columns: 180px 200px 50px 180px 100px 90px; */
     padding: 0 15;
   }
   .order__manage .order__row:first-child {
