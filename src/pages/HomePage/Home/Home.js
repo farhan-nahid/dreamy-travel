@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Footer from '../../SharedComponents/Footer/Footer';
 import Header from '../../SharedComponents/Header/Header';
 import AllPlaces from '../AllPlaces/AllPlaces';
 import Banner from '../Banner/Banner';
@@ -17,6 +18,7 @@ const Home = () => {
       <AllPlaces />
       <HollyDayOffer />
       <Gallery />
+      <Footer />
     </>
   );
 };

@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { useHistory, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../SharedComponents/Footer/Footer';
 import Header from '../SharedComponents/Header/Header';
 import LoadingSpinner from '../SharedComponents/LoadingSpinner/LoadingSpinner';
 import './BookNowPage.css';
@@ -116,6 +117,7 @@ const BookNowPage = () => {
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };

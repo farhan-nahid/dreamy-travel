@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
 import useAuth from '../../../hooks/useAuth';
+import Footer from '../../SharedComponents/Footer/Footer';
 import Header from '../../SharedComponents/Header/Header';
 
 const Register = () => {
@@ -152,6 +153,7 @@ const Register = () => {
           </button>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

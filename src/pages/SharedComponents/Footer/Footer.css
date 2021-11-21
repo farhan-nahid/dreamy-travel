@@ -1,0 +1,88 @@
+.btn__color {
+  background-color: #183153;
+  color: #fff;
+}
+
+.btn__color:hover {
+  color: #fff;
+}
+
+.footer__container {
+  margin-top: 70px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.footer__container h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer__container ul {
+  margin: 0;
+  text-align: left;
+  padding: 0;
+}
+
+.footer__container ul li {
+  list-style-type: none;
+}
+
+.footer__container p {
+  text-align: left;
+}
+
+.footer__container input {
+  width: 80%;
+  display: inline;
+}
+
+.social__media {
+  margin-top: 20px;
+  display: flex;
+}
+
+.social__media a {
+  margin-right: 20px;
+  display: block;
+  color: white;
+  background-color: #183153;
+  border-radius: 50%;
+  padding: 4px 8px;
+  transition: transform 0.5s ease-in;
+}
+
+.social__media a:hover {
+  transform: rotate(360deg);
+}
+
+.copy__right {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+  }
+}
