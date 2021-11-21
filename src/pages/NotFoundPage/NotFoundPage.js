@@ -8,7 +8,7 @@ const NotFoundPage = () => {
   }, []);
   return (
     <>
-      <section className='container notFound_container'>
+      <section className='container notFound__container'>
         <div className='notFound'>
           <h2 className='notFound__title'>404</h2>
           <h3 className='notFound__subtitle'>Page not found</h3>

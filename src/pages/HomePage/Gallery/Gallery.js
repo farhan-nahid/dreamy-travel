@@ -19,18 +19,18 @@ const Gallery = () => {
       <h2>OUR GALLERY</h2>
       <p>This is our Gallery. Hare you can see some amazing photos.</p>
       <div className='gallery'>
-        <img src={gallery1} alt='' />
-        <img src={gallery2} alt='' />
-        <img src={gallery3} alt='' />
-        <img src={gallery4} alt='' />
-        <img src={gallery5} alt='' />
-        <img src={gallery6} alt='' />
-        <img src={gallery7} alt='' />
-        <img src={gallery8} alt='' />
-        <img src={gallery9} alt='' />
-        <img src={gallery10} alt='' />
-        <img src={gallery11} alt='' />
-        <img src={gallery12} alt='' />
+        <img src={gallery1} alt='gallery1' />
+        <img src={gallery2} alt='gallery2' />
+        <img src={gallery3} alt='gallery3' />
+        <img src={gallery4} alt='gallery4' />
+        <img src={gallery5} alt='gallery5' />
+        <img src={gallery6} alt='gallery6' />
+        <img src={gallery7} alt='gallery7' />
+        <img src={gallery8} alt='gallery8' />
+        <img src={gallery9} alt='gallery9' />
+        <img src={gallery10} alt='gallery10' />
+        <img src={gallery11} alt='gallery11' />
+        <img src={gallery12} alt='gallery12' />
       </div>
     </section>
   );
